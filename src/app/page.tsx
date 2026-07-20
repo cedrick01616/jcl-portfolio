@@ -92,6 +92,22 @@ const reels = [
     poster: "/reels/reel-4.jpg",
   },
   {
+    title: "Reel 5",
+    src: "/reels/reel-5.mp4",
+    poster: "/reels/reel-5.jpg",
+  },
+  {
+    title: "Reel 6",
+    src: "/reels/reel-6.mp4",
+    poster: "/reels/reel-6.jpg",
+  },
+  {
+    title: "Ad 1",
+    src: "/reels/ad-1.mp4",
+    poster: "/reels/ad-1.jpg",
+    aspect: "landscape" as const,
+  },
+  {
     title: "Lifestyle Gym App Walkthrough",
     src: "/reels/lifestyle-gym-app.mp4",
     poster: "/reels/lifestyle-gym-app.jpg",
@@ -247,7 +263,7 @@ export default function Home() {
                     controls
                     preload="none"
                     playsInline
-                    className="aspect-9/16 w-full bg-black object-cover"
+                    className={`w-full bg-black object-cover ${reel.aspect === "landscape" ? "aspect-video" : "aspect-9/16"}`}
                   >
                     Your browser does not support the video tag.
                   </video>
