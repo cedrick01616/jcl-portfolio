@@ -263,7 +263,7 @@ export default function Home() {
                     controls
                     preload="none"
                     playsInline
-                    className={`w-full bg-black object-cover ${reel.aspect === "landscape" ? "aspect-video" : "aspect-9/16"}`}
+                    className={`w-full bg-black object-contain ${reel.aspect === "landscape" ? "aspect-video" : "aspect-9/16"}`}
                   >
                     Your browser does not support the video tag.
                   </video>
