@@ -70,6 +70,34 @@ const experience = [
   },
 ];
 
+const reels = [
+  {
+    title: "Reel 1",
+    src: "/reels/reel-1.mp4",
+    poster: "/reels/reel-1.jpg",
+  },
+  {
+    title: "Reel 2",
+    src: "/reels/reel-2.mp4",
+    poster: "/reels/reel-2.jpg",
+  },
+  {
+    title: "Reel 3",
+    src: "/reels/reel-3.mp4",
+    poster: "/reels/reel-3.jpg",
+  },
+  {
+    title: "Reel 4",
+    src: "/reels/reel-4.mp4",
+    poster: "/reels/reel-4.jpg",
+  },
+  {
+    title: "Lifestyle Gym App Walkthrough",
+    src: "/reels/lifestyle-gym-app.mp4",
+    poster: "/reels/lifestyle-gym-app.jpg",
+  },
+];
+
 const achievements = [
   "Built and optimized automated lead management workflows using GoHighLevel",
   "Launched a website integrated with automated lead capture and routing",
@@ -195,6 +223,36 @@ export default function Home() {
                   <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{item.company}</p>
                   <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{item.description}</p>
                 </article>
+              ))}
+            </div>
+          </section>
+        </Reveal>
+
+        <Reveal>
+          <section id="reels" className="scroll-mt-24 rounded-[1.75rem] border border-slate-200 bg-white/80 p-7 shadow-sm transition-colors lg:p-8 dark:border-white/10 dark:bg-white/5">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-600 dark:text-indigo-300">Content creation</p>
+            <h2 className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">Reels and video content</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+              A selection of reels and promotional videos I created and edited for marketing campaigns.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {reels.map((reel) => (
+                <div
+                  key={reel.src}
+                  className="overflow-hidden rounded-[1.25rem] border border-slate-200 bg-slate-950 transition hover:-translate-y-1 hover:shadow-lg dark:border-white/10"
+                >
+                  <video
+                    src={reel.src}
+                    poster={reel.poster}
+                    controls
+                    preload="none"
+                    playsInline
+                    className="aspect-9/16 w-full bg-black object-cover"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                  <p className="px-4 py-3 text-sm font-medium text-slate-200">{reel.title}</p>
+                </div>
               ))}
             </div>
           </section>
