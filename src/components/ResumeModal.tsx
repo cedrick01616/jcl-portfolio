@@ -25,8 +25,16 @@ export default function ResumeModal() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50 dark:border-white/15 dark:text-slate-200 dark:hover:bg-white/10"
+        className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-600/30 transition hover:-translate-y-0.5 hover:bg-indigo-500 hover:shadow-xl hover:shadow-indigo-600/40 dark:shadow-indigo-500/20 dark:hover:shadow-indigo-500/30"
       >
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          className="h-4 w-4"
+        >
+          <path d="M4 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7.414A2 2 0 0 0 14.414 6L10 1.586A2 2 0 0 0 8.586 1H4Zm5 0.5V6a1 1 0 0 0 1 1h3.5L9 2.5Z" />
+        </svg>
         View full resume
       </button>
 
