@@ -38,19 +38,19 @@ export default function NavLinks() {
   }
 
   return (
-    <nav className="hidden gap-6 text-sm font-medium text-slate-600 md:flex dark:text-slate-300">
+    <nav className="hidden gap-6 text-sm font-semibold text-muted md:flex">
       {NAV_LINKS.map((link) => (
         <a
           key={link.id}
           href={`#${link.id}`}
           onClick={(event) => handleClick(event, link.id)}
-          className={`relative pb-1 transition-colors hover:text-slate-950 dark:hover:text-white ${
-            active === link.id ? "text-slate-950 dark:text-white" : ""
+          className={`relative pb-1 transition-colors hover:text-foreground ${
+            active === link.id ? "text-foreground" : ""
           }`}
         >
           {link.label}
           <span
-            className={`absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-indigo-500 transition-transform duration-300 ease-out ${
+            className={`absolute inset-x-0 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-accent transition-transform duration-300 ease-out ${
               active === link.id ? "scale-x-100" : ""
             }`}
           />

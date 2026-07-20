@@ -5,14 +5,14 @@ import { useState, type FormEvent } from "react";
 type Status = "idle" | "loading" | "success" | "error";
 
 const fieldClass =
-  "rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-indigo-400 dark:border-white/15 dark:bg-white/5 dark:text-white dark:placeholder:text-slate-500";
+  "rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition focus:border-accent-text placeholder:text-muted";
 
 export default function ContactForm({ accessKey }: { accessKey?: string }) {
   const [status, setStatus] = useState<Status>("idle");
 
   if (!accessKey) {
     return (
-      <p className="mt-8 max-w-xl rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-4 text-sm text-slate-500 dark:border-white/15 dark:bg-white/5 dark:text-slate-400">
+      <p className="mt-8 max-w-xl rounded-2xl border border-dashed border-border bg-background/50 p-4 text-sm text-muted">
         The contact form isn&apos;t connected yet — use the links above for now.
       </p>
     );
@@ -58,7 +58,7 @@ export default function ContactForm({ accessKey }: { accessKey?: string }) {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="rounded-full bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-60 sm:col-span-2"
+        className="rounded-full bg-accent px-5 py-3 text-sm font-bold text-accent-ink shadow-lg shadow-accent/30 transition hover:shadow-xl hover:shadow-accent/40 disabled:cursor-not-allowed disabled:opacity-60 sm:col-span-2"
       >
         {status === "loading" ? "Sending..." : "Send message"}
       </button>
