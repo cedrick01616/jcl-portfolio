@@ -185,8 +185,7 @@ const contactMethods = [
   },
 ];
 
-// Add a Calendly (or similar) link here once you have one, e.g. "https://calendly.com/yourname/intro-call"
-const bookingUrl = "";
+const bookingUrl = "https://calendly.com/cedricklunnay78/30min";
 
 const bookingIcon = (
   <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
