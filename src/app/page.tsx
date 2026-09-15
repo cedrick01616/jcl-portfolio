@@ -4,121 +4,157 @@ import NavLinks from "@/components/NavLinks";
 import Reveal from "@/components/Reveal";
 import ResumeModal from "@/components/ResumeModal";
 import ThemeToggle from "@/components/ThemeToggle";
+import AutomationShowcase, { type AutomationSample } from "@/components/AutomationShowcase";
 
 export const dynamic = "force-dynamic";
 
 const profile = {
   name: "John Cedric A. Lunnay",
-  role: "Executive Assistant • Collections Specialist • Customer Service Advocate",
+  role: "AI Automation Specialist · GoHighLevel (GHL) · Marketing Automation",
   location: "Metro Manila, Philippines",
   summary:
-    "Results-driven professional with a Computer Science background and cross-functional experience in executive support, collections, customer service, marketing automation, and lead generation. I combine operational discipline with digital tools to improve efficiency, communication, and customer outcomes.",
+    "Results-driven Automation Specialist with a Computer Science background. I build GoHighLevel (GHL) CRM and AI-assisted automation systems from the ground up — lead routing, opportunity pipelines, chatbots, and win-back campaigns — that turn manual follow-up into a system that runs itself.",
 };
 
-const highlights = [
-  "Experienced in executive support, collections, and customer success operations",
-  "Built and optimized marketing automation workflows using GoHighLevel",
-  "Skilled in lead generation, SEO, chatbot deployment, and campaign support",
+const stats = [
+  { value: "1", label: "GHL CRM system built from scratch" },
+  { value: "3", label: "Business locations automated" },
+  { value: "100%", label: "Website leads auto-routed to CRM" },
+  { value: "CS", label: "Computer Science background" },
 ];
 
-const skills = [
-  "GoHighLevel automation",
-  "Lead generation",
-  "Customer service support",
-  "Collections and account follow-up",
-  "Email and social media marketing",
-  "SEO and content support",
-  "CRM and workflow coordination",
-  "Problem solving and stakeholder communication",
+const services = [
+  {
+    title: "GHL Workflow Automation",
+    description: "Lead routing, opportunity pipelines, and follow-up sequences built and tuned inside GoHighLevel.",
+  },
+  {
+    title: "Website → CRM Integration",
+    description: "Forms and landing pages wired directly into GHL so every submission becomes a tracked, routed lead.",
+  },
+  {
+    title: "AI Chatbots",
+    description: "Chatbots that engage website visitors, qualify them, and push hot leads into the pipeline in real time.",
+  },
+  {
+    title: "Win-Back & Retention Campaigns",
+    description: "Automated email sequences that re-engage lapsed customers and recover revenue on autopilot.",
+  },
+  {
+    title: "SEO & Content Systems",
+    description: "Blog and on-page SEO workflows built to compound organic visibility over time.",
+  },
+  {
+    title: "AR & Collections Ops",
+    description: "Aging-account monitoring and recovery processes for 30-, 60-, and 90-day past-due balances.",
+  },
+];
+
+const highlights = [
+  "Built a GoHighLevel CRM and automation system from the ground up",
+  "Automated lead routing, opportunity pipelines, and win-back campaigns",
+  "Led website development, SEO, and social marketing for a multi-location business",
+];
+
+const skillGroups = [
+  {
+    label: "Automation & CRM",
+    skills: ["GoHighLevel (GHL)", "Workflow automation", "Lead routing & pipelines", "Chatbot building", "Website–CRM integration"],
+  },
+  {
+    label: "Marketing",
+    skills: ["Email marketing", "SEO & content", "Social media management", "Reels & video content"],
+  },
+  {
+    label: "Operations",
+    skills: ["Accounts receivable", "Collections", "Aging account monitoring", "Process improvement"],
+  },
 ];
 
 const experience = [
   {
-    title: "Executive Assistant",
-    company: "Gym Business Operations",
-    period: "Nov 2025 - Jul 2026",
+    title: "Executive Assistant / Automation Specialist",
+    company: "Lifestyle Gym (Multi-Location, California)",
+    period: "May 2025 – Present",
     description:
-      "Built and optimized GoHighLevel workflows, launched a new company website with automated lead capture, created chatbots, supported SEO and content, managed social media and marketing campaigns, and helped with collections and accounts receivable.",
+      "Built and optimized GoHighLevel workflows for lead management and automated follow-up. Designed and launched a new company website integrated with GHL for automated lead capture and routing, built chatbots for visitor engagement, and optimized SEO and blog content. Led social media marketing across three locations (Auburn, Citrus Heights, Fair Oaks), ran win-back email campaigns, and managed accounts receivable and collections including 30-, 60-, and 90-day aging accounts.",
   },
   {
-    title: "Customer Service Specialist",
-    company: "CertainlyCX",
-    period: "Aug 2025 - Oct 2025",
+    title: "Collection Specialist",
+    company: "Accenture",
+    period: "Feb 2023 – Feb 2025",
     description:
-      "Managed calls, chats, and emails, supported sales orders and returns, handled warranty claims, maintained stock accuracy, and verified vehicle compatibility details for customer orders.",
+      "Contacted debtors and negotiated realistic payment arrangements, improving recovery rates and customer satisfaction. Monitored 30-, 60-, and 90-day aging account reports to prioritize outreach, identified and corrected mispayments and billing discrepancies, and resolved disputes while maintaining meticulous records.",
   },
   {
-    title: "Lead Generation Specialist",
-    company: "Allegis Global Solutions",
-    period: "Jun 2025 - Aug 2025",
-    description:
-      "Qualified inbound leads, researched target accounts and buyer personas, maintained prospect lists, and supported outbound outreach through email, phone, social, and events.",
-  },
-  {
-    title: "Collections Specialist",
-    company: "Accenture Inc.",
-    period: "Feb 2023 - Apr 2025",
-    description:
-      "Contacted debtors, negotiated payment arrangements, maintained accurate records, and resolved disputes and discrepancies related to overdue accounts.",
-  },
-  {
-    title: "Subject Matter Expert / Operations Supervisor",
+    title: "Subject Matter Expert (Operations Supervisor, Tech Support)",
     company: "Sykes Inc.",
-    period: "Aug 2021 - Jan 2023",
+    period: "Aug 2021 – Jan 2023",
     description:
-      "Resolved escalated customer issues, handled complaints and technical troubleshooting, supported process improvements, and helped turn around difficult customer experiences.",
+      "Handled escalated customer issues and turned around difficult experiences. Supported the definition of processes and policies, troubleshot technical issues, escalated high-risk accounts with clear documentation, reconciled payment records against statements, and recommended workflow improvements that reduced time-to-resolution.",
+  },
+];
+
+const automationSamples: AutomationSample[] = [
+  {
+    category: "Lead Routing & Pipelines",
+    tag: "GHL Workflow",
+    title: "Automated Lead Routing",
+    description:
+      "Website form submissions flow straight into GHL, get scored, and route to the right pipeline stage with a follow-up sequence triggered automatically.",
+    // image: "/automations/lead-routing.png",
+  },
+  {
+    category: "Lead Routing & Pipelines",
+    tag: "GHL Pipeline",
+    title: "Opportunity Pipeline Build",
+    description:
+      "Custom pipeline stages mapped to the full sales journey — new lead to closed-won — with automated triggers on every stage change.",
+    // image: "/automations/pipeline-build.png",
+  },
+  {
+    category: "Win-Back & Retention",
+    tag: "Email Automation",
+    title: "Win-Back Email Sequence",
+    description:
+      "A multi-step email sequence that automatically re-engages former customers with personalized offers to recover lost revenue.",
+    // image: "/automations/win-back.png",
+  },
+  {
+    category: "Win-Back & Retention",
+    tag: "Campaign Automation",
+    title: "Seasonal Promotion Automation",
+    description:
+      "Monthly and seasonal campaign sequences tied to membership cycles, scheduled and sent without manual work.",
+    // image: "/automations/seasonal-promo.png",
+  },
+  {
+    category: "Chatbots & Lead Gen",
+    tag: "AI Chatbot",
+    title: "Website Chatbot",
+    description:
+      "A chatbot that qualifies website visitors and routes hot leads directly into the CRM the moment they convert.",
+    // image: "/automations/chatbot.png",
+  },
+  {
+    category: "Website & SEO",
+    tag: "Integration",
+    title: "Website → CRM Integration",
+    description:
+      "Rebuilt company website wired directly into GHL, so every form submission becomes a tracked, automatically routed lead.",
+    // image: "/automations/website-crm.png",
   },
 ];
 
 const reels = [
-  {
-    title: "Reel 1",
-    src: "/reels/reel-1.mp4",
-    poster: "/reels/reel-1.jpg",
-  },
-  {
-    title: "Reel 2",
-    src: "/reels/reel-2.mp4",
-    poster: "/reels/reel-2.jpg",
-  },
-  {
-    title: "Reel 3",
-    src: "/reels/reel-3.mp4",
-    poster: "/reels/reel-3.jpg",
-  },
-  {
-    title: "Reel 4",
-    src: "/reels/reel-4.mp4",
-    poster: "/reels/reel-4.jpg",
-  },
-  {
-    title: "Reel 5",
-    src: "/reels/reel-5.mp4",
-    poster: "/reels/reel-5.jpg",
-  },
-  {
-    title: "Reel 6",
-    src: "/reels/reel-6.mp4",
-    poster: "/reels/reel-6.jpg",
-  },
-  {
-    title: "Ad 1",
-    src: "/reels/ad-1.mp4",
-    poster: "/reels/ad-1.jpg",
-    aspect: "landscape" as const,
-  },
-  {
-    title: "Lifestyle Gym App Walkthrough",
-    src: "/reels/lifestyle-gym-app.mp4",
-    poster: "/reels/lifestyle-gym-app.jpg",
-  },
-];
-
-const achievements = [
-  "Built and optimized automated lead management workflows using GoHighLevel",
-  "Launched a website integrated with automated lead capture and routing",
-  "Created chatbots and supported SEO and content initiatives for online visibility",
-  "Managed customer support, collections, and retention efforts across multiple business functions",
+  { title: "Reel 1", src: "/reels/reel-1.mp4", poster: "/reels/reel-1.jpg" },
+  { title: "Reel 2", src: "/reels/reel-2.mp4", poster: "/reels/reel-2.jpg" },
+  { title: "Reel 3", src: "/reels/reel-3.mp4", poster: "/reels/reel-3.jpg" },
+  { title: "Reel 4", src: "/reels/reel-4.mp4", poster: "/reels/reel-4.jpg" },
+  { title: "Reel 5", src: "/reels/reel-5.mp4", poster: "/reels/reel-5.jpg" },
+  { title: "Reel 6", src: "/reels/reel-6.mp4", poster: "/reels/reel-6.jpg" },
+  { title: "Ad 1", src: "/reels/ad-1.mp4", poster: "/reels/ad-1.jpg", aspect: "landscape" as const },
+  { title: "Lifestyle Gym App Walkthrough", src: "/reels/lifestyle-gym-app.mp4", poster: "/reels/lifestyle-gym-app.jpg" },
 ];
 
 export default function Home() {
@@ -132,11 +168,13 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground transition-colors">
       <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl transition-colors">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <a
-            href="#top"
-            className="text-lg font-extrabold tracking-[0.2em] text-foreground uppercase transition hover:text-accent-text"
-          >
-            {profile.name}
+          <a href="#top" className="flex items-center gap-3 transition hover:opacity-80">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent text-sm font-black text-accent-ink">
+              JL
+            </span>
+            <span className="text-sm font-extrabold tracking-[0.2em] text-foreground uppercase sm:text-base">
+              {profile.name}
+            </span>
           </a>
           <div className="flex items-center gap-6">
             <NavLinks />
@@ -157,23 +195,21 @@ export default function Home() {
                 Open to freelance, contract, and full-time opportunities
               </div>
               <h1 className="text-4xl font-black tracking-tight text-foreground sm:text-5xl">
-                {profile.name} — building efficient operations and customer-focused solutions with purpose.
+                I build AI-powered GoHighLevel automations that turn leads into revenue.
               </h1>
-              <p className="mt-5 text-lg leading-8 text-muted">
-                {profile.summary}
-              </p>
+              <p className="mt-5 text-lg leading-8 text-muted">{profile.summary}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="#contact"
+                  href="#automations"
                   className="rounded-full bg-accent px-5 py-3 text-sm font-bold text-accent-ink shadow-lg shadow-accent/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40"
                 >
-                  Let&apos;s connect
+                  View automation work
                 </a>
                 <a
-                  href="#experience"
+                  href="#contact"
                   className="rounded-full border border-border px-5 py-3 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-accent-text/50"
                 >
-                  View experience
+                  Let&apos;s connect
                 </a>
               </div>
               <ul className="mt-8 space-y-2 text-sm text-muted">
@@ -195,15 +231,13 @@ export default function Home() {
                 priority
                 className="rounded-[1.25rem] object-cover"
               />
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Current focus</p>
-                  <p className="mt-1 font-semibold">Executive Support & Automation</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Location</p>
-                  <p className="mt-1 font-semibold">{profile.location}</p>
-                </div>
+              <div className="mt-5 grid grid-cols-2 gap-3">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/10 p-4">
+                    <p className="text-2xl font-black text-accent">{stat.value}</p>
+                    <p className="mt-1 text-xs font-semibold text-white/80">{stat.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -212,14 +246,52 @@ export default function Home() {
         <Reveal>
           <section id="about" className="scroll-mt-24 grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="rounded-[1.5rem] border border-border bg-card p-7 shadow-sm transition-colors">
-              <p className="text-sm font-bold uppercase tracking-[0.3em] text-accent-text">Professional profile</p>
-              <h2 className="mt-3 text-2xl font-extrabold text-foreground">A practical and people-focused professional combining operations, support, and digital strategy.</h2>
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-accent-text">About</p>
+              <h2 className="mt-3 text-2xl font-extrabold text-foreground">
+                A Computer Science grad who turns manual operations into automated systems.
+              </h2>
             </div>
             <div className="rounded-[1.5rem] border border-border bg-card p-7 shadow-sm transition-colors">
               <p className="text-lg leading-8 text-muted">
-                I bring a strong mix of operational discipline, communication, and digital problem-solving to every role. My work is grounded in creating organized, efficient, and customer-centered processes that support growth and results.
+                I combine a Computer Science foundation with hands-on operations experience to design automation that
+                actually gets used. From GoHighLevel workflows and AI chatbots to website–CRM integrations and win-back
+                campaigns, I build systems that replace repetitive manual work — backed by real experience in accounts
+                receivable, collections, and customer operations.
+              </p>
+              <p className="mt-4 text-sm font-semibold text-accent-text">
+                Bachelor of Science in Computer Science — Immaculada Concepcion College
               </p>
             </div>
+          </section>
+        </Reveal>
+
+        <Reveal>
+          <section className="scroll-mt-24 rounded-[1.75rem] border border-border bg-card p-7 shadow-sm transition-colors lg:p-8">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-accent-text">Services</p>
+            <h2 className="mt-2 text-2xl font-extrabold text-foreground">What I automate</h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map((service) => (
+                <div
+                  key={service.title}
+                  className="rounded-[1.25rem] border border-border bg-background/50 p-5 transition hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <h3 className="text-base font-bold text-foreground">{service.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted">{service.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </Reveal>
+
+        <Reveal>
+          <section id="automations" className="scroll-mt-24 rounded-[1.75rem] border border-border bg-card p-7 shadow-sm transition-colors lg:p-8">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-accent-text">Portfolio</p>
+            <h2 className="mt-2 text-2xl font-extrabold text-foreground">Automation work samples</h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
+              A look at the GoHighLevel workflows, chatbots, and campaigns I&apos;ve built. Screenshots and walkthroughs
+              are being added — reach out for a live demo of any workflow below in the meantime.
+            </p>
+            <AutomationShowcase samples={automationSamples} />
           </section>
         </Reveal>
 
@@ -279,34 +351,25 @@ export default function Home() {
         </Reveal>
 
         <Reveal>
-          <section id="skills" className="scroll-mt-24 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="rounded-[1.5rem] border border-white/10 bg-card-dark p-7 text-white shadow-sm">
-              <p className="text-sm font-bold uppercase tracking-[0.3em] text-accent">Core strengths</p>
-              <h2 className="mt-3 text-2xl font-extrabold">Skills and capabilities</h2>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full border border-white/15 bg-white/10 px-3 py-2 text-sm text-white/90 transition hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-[1.5rem] border border-border bg-card p-7 shadow-sm transition-colors">
-              <p className="text-sm font-bold uppercase tracking-[0.3em] text-accent-text">Career highlights</p>
-              <div className="mt-6 space-y-4">
-                {achievements.map((achievement) => (
-                  <div
-                    key={achievement}
-                    className="rounded-[1.1rem] border border-border bg-background/50 p-4 text-sm leading-7 text-muted transition hover:-translate-y-0.5 hover:shadow-md"
-                  >
-                    {achievement}
+          <section id="skills" className="scroll-mt-24 rounded-[1.75rem] border border-white/10 bg-card-dark p-7 text-white shadow-sm lg:p-8">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-accent">Core strengths</p>
+            <h2 className="mt-3 text-2xl font-extrabold">Skills and capabilities</h2>
+            <div className="mt-6 grid gap-6 sm:grid-cols-3">
+              {skillGroups.map((group) => (
+                <div key={group.label}>
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/50">{group.label}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {group.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-full border border-white/15 bg-white/10 px-3 py-2 text-sm text-white/90 transition hover:-translate-y-0.5 hover:border-accent/40 hover:text-accent"
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </section>
         </Reveal>
@@ -314,9 +377,11 @@ export default function Home() {
         <Reveal>
           <section id="contact" className="scroll-mt-24 rounded-[1.75rem] border border-border bg-card p-7 shadow-sm transition-colors lg:p-8">
             <p className="text-sm font-bold uppercase tracking-[0.3em] text-accent-text">Contact</p>
-            <h2 className="mt-2 text-2xl font-extrabold text-foreground">Let&apos;s discuss your next opportunity or project.</h2>
+            <h2 className="mt-2 text-2xl font-extrabold text-foreground">Let&apos;s automate your next lead pipeline.</h2>
             <p className="mt-4 max-w-2xl text-lg leading-8 text-muted">
-              I’m available for opportunities that value organization, customer focus, problem-solving, and operational support. I’d be glad to connect about roles that align with my background in administration, support, and business operations.
+              Available for GoHighLevel builds, AI chatbot setups, and marketing automation projects — as well as
+              executive support and operations roles. I&apos;d be glad to talk through what you&apos;re trying to
+              automate.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="mailto:cedricklunnay78@gmail.com" className="rounded-full bg-accent px-5 py-3 text-sm font-bold text-accent-ink shadow-lg shadow-accent/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40">

@@ -5,6 +5,7 @@ import { smoothScrollToId } from "@/lib/smoothScroll";
 
 const NAV_LINKS = [
   { id: "about", label: "About" },
+  { id: "automations", label: "Automations" },
   { id: "experience", label: "Experience" },
   { id: "reels", label: "Reels" },
   { id: "contact", label: "Contact" },

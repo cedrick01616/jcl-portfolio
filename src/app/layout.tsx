@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "John Cedric A. Lunnay | Professional Portfolio",
-  description: "A professional portfolio website for John Cedric A. Lunnay, showcasing executive support, collections, customer service, and marketing automation experience.",
+  title: "John Cedric A. Lunnay | AI Automation Specialist (GoHighLevel)",
+  description:
+    "Portfolio of John Cedric A. Lunnay, an AI Automation Specialist building GoHighLevel (GHL) CRM workflows, chatbots, lead routing, and win-back campaigns.",
 };
 
 export default function RootLayout({
