@@ -102,7 +102,7 @@ const automationSamples: AutomationSample[] = [
     title: "Automated Lead Routing",
     description:
       "Website form submissions flow straight into GHL, get scored, and route to the right pipeline stage with a follow-up sequence triggered automatically.",
-    images: ["/automations/lead-routing-1.png", "/automations/lead-routing-2.jpg"],
+    images: ["/automations/lead-routing-1.png", "/automations/lead-routing-2.png"],
   },
   {
     category: "Lead Routing & Pipelines",
