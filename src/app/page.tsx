@@ -146,6 +146,45 @@ const automationSamples: AutomationSample[] = [
   },
 ];
 
+const contactMethods = [
+  {
+    label: "Email",
+    value: "cedricklunnay78@gmail.com",
+    href: "mailto:cedricklunnay78@gmail.com",
+    external: false,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.8" />
+        <path d="m4 7 8 6 8-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/johnlunnay",
+    href: "https://www.linkedin.com/in/johnlunnay",
+    external: true,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
+        <rect x="3" y="9" width="4" height="12" rx="0.5" />
+        <circle cx="5" cy="4.5" r="2.2" />
+        <path d="M10 9h3.6v1.9h.05c.5-.9 1.75-1.9 3.6-1.9 3.85 0 4.75 2.4 4.75 5.6V21h-4v-5.7c0-1.35-.03-3.1-2-3.1-2 0-2.3 1.5-2.3 3v5.8h-4V9Z" />
+      </svg>
+    ),
+  },
+  {
+    label: "WhatsApp",
+    value: "+63 926 748 3422",
+    href: "https://wa.me/639267483422",
+    external: true,
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
+        <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.3.2-.4.1-.2 0-.3 0-.4 0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9 0 1.1.8 2.2.9 2.4.1.2 1.6 2.5 4 3.4.6.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.4-.3Z" />
+      </svg>
+    ),
+  },
+];
+
 export default function Home() {
   const renderedAt = new Date().toLocaleString("en-US", {
     dateStyle: "medium",
@@ -346,24 +385,49 @@ export default function Home() {
         <Reveal>
           <section id="contact" className="scroll-mt-24 rounded-[1.75rem] border border-border bg-card p-7 shadow-sm transition-colors lg:p-8">
             <p className="text-sm font-bold uppercase tracking-[0.3em] text-accent-text">Contact</p>
-            <h2 className="mt-2 text-2xl font-extrabold text-foreground">Let&apos;s automate your next lead pipeline.</h2>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-muted">
-              Available for GoHighLevel builds, AI chatbot setups, and marketing automation projects — as well as
-              executive support and operations roles. I&apos;d be glad to talk through what you&apos;re trying to
-              automate.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a href="mailto:cedricklunnay78@gmail.com" className="rounded-full bg-accent px-5 py-3 text-sm font-bold text-accent-ink shadow-lg shadow-accent/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40">
-                cedricklunnay78@gmail.com
-              </a>
-              <a href="https://www.linkedin.com/in/johnlunnay" target="_blank" rel="noreferrer" className="rounded-full border border-border px-5 py-3 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-accent-text/50">
-                LinkedIn
-              </a>
-              <a href="https://wa.me/639267483422" target="_blank" rel="noreferrer" className="rounded-full border border-border px-5 py-3 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-accent-text/50">
-                WhatsApp
-              </a>
+            <h2 className="mt-2 text-2xl font-extrabold text-foreground sm:text-3xl">
+              Let&apos;s automate your next lead pipeline.
+            </h2>
+
+            <div className="mt-8 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
+              <div>
+                <p className="max-w-md text-base leading-7 text-muted">
+                  Available for GoHighLevel builds, AI chatbot setups, and marketing automation projects — as well as
+                  executive support and operations roles. I&apos;d be glad to talk through what you&apos;re trying to
+                  automate.
+                </p>
+
+                <div className="mt-6 space-y-3">
+                  {contactMethods.map((method) => (
+                    <a
+                      key={method.label}
+                      href={method.href}
+                      target={method.external ? "_blank" : undefined}
+                      rel={method.external ? "noreferrer" : undefined}
+                      className="group flex items-center gap-4 rounded-2xl border border-border bg-background/60 p-4 transition hover:-translate-y-0.5 hover:border-accent-text/50 hover:shadow-md"
+                    >
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-accent-text">
+                        {method.icon}
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-sm font-bold text-foreground">{method.label}</p>
+                        <p className="truncate text-xs text-muted">{method.value}</p>
+                      </div>
+                      <span
+                        aria-hidden="true"
+                        className="ml-auto shrink-0 text-muted transition group-hover:translate-x-1 group-hover:text-accent-text"
+                      >
+                        →
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-[1.5rem] border border-border bg-background/40 p-6 lg:p-7">
+                <ContactForm accessKey={process.env.NEXT_PUBLIC_WEB3FORMS_KEY} />
+              </div>
             </div>
-            <ContactForm accessKey={process.env.NEXT_PUBLIC_WEB3FORMS_KEY} />
           </section>
         </Reveal>
       </main>
