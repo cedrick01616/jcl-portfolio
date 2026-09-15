@@ -194,6 +194,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors">
+      <div className="flex min-h-dvh flex-col">
       <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl transition-colors">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
           <a href="#top" className="flex items-center gap-3 transition hover:opacity-80">
@@ -211,10 +212,10 @@ export default function Home() {
         </div>
       </header>
 
-      <Reveal>
+      <Reveal className="flex flex-1 flex-col">
         <section
           id="top"
-          className="relative flex min-h-[calc(100dvh-4.5rem)] flex-col justify-center overflow-hidden border-b border-white/10 bg-card-dark py-12 text-white sm:py-16 lg:py-20"
+          className="relative flex flex-1 flex-col justify-center overflow-hidden border-b border-white/10 bg-card-dark py-12 text-white sm:py-16 lg:py-20"
         >
           <div
             aria-hidden="true"
@@ -271,6 +272,7 @@ export default function Home() {
           </div>
         </section>
       </Reveal>
+      </div>
 
       <main className="mx-auto flex max-w-7xl flex-col gap-10 px-6 pb-16 pt-10 lg:px-8">
         <Reveal>
