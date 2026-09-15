@@ -174,7 +174,7 @@ export default function Home() {
       <Reveal>
         <section
           id="top"
-          className="relative overflow-hidden border-b border-white/10 bg-card-dark py-12 text-white sm:py-16 lg:py-20"
+          className="relative flex min-h-[calc(100dvh-4.5rem)] flex-col justify-center overflow-hidden border-b border-white/10 bg-card-dark py-12 text-white sm:py-16 lg:py-20"
         >
           <div
             aria-hidden="true"
