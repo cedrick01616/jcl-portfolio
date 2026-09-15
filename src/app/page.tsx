@@ -174,7 +174,7 @@ export default function Home() {
       <Reveal>
         <section
           id="top"
-          className="relative overflow-hidden border-b border-white/10 bg-card-dark py-16 text-white sm:py-20 lg:py-24"
+          className="relative overflow-hidden border-b border-white/10 bg-card-dark py-20 text-white sm:py-24 lg:py-28 xl:py-32"
         >
           <div
             aria-hidden="true"
@@ -189,15 +189,17 @@ export default function Home() {
             className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent/10 blur-[110px]"
           />
 
-          <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 text-center lg:px-8">
-            <div className="mb-6 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-accent">
+          <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 text-center lg:max-w-4xl lg:px-8 xl:max-w-5xl">
+            <div className="mb-7 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-accent">
               Open to freelance, contract, and full-time opportunities
             </div>
-            <h1 className="text-4xl font-black leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-black leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
               AI automation systems, built in GoHighLevel, that turn leads into revenue.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-white/70">{profile.summary}</p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 lg:text-xl lg:leading-9">
+              {profile.summary}
+            </p>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
               <a
                 href="#automations"
                 className="rounded-full bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-lg shadow-accent/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40"
@@ -216,11 +218,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-6 border-t border-white/10 px-6 pt-8 sm:grid-cols-4 lg:px-8">
+          <div className="relative mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-y-8 border-t border-white/10 px-6 pt-10 sm:grid-cols-4 sm:gap-x-6 lg:px-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <p className="text-2xl font-black text-accent sm:text-3xl">{stat.value}</p>
-                <p className="mt-1 text-xs font-semibold text-white/60">{stat.label}</p>
+                <p className="mt-1.5 text-xs font-semibold text-white/60">{stat.label}</p>
               </div>
             ))}
           </div>
