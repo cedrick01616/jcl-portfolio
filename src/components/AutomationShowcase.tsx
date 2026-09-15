@@ -108,7 +108,7 @@ export default function AutomationShowcase({ samples }: { samples: AutomationSam
         >
           <div
             onClick={(event) => event.stopPropagation()}
-            className="relative flex h-[90vh] w-full max-w-3xl flex-col overflow-hidden rounded-[1.75rem] border border-border bg-background shadow-2xl"
+            className="relative flex h-[90vh] w-full max-w-5xl flex-col overflow-hidden rounded-[1.75rem] border border-border bg-background shadow-2xl"
           >
             <div className="flex items-center justify-between border-b border-border px-6 py-4">
               <h2 className="text-lg font-bold text-foreground">{lightbox.title}</h2>
