@@ -185,6 +185,20 @@ const contactMethods = [
   },
 ];
 
+// Add a Calendly (or similar) link here once you have one, e.g. "https://calendly.com/yourname/intro-call"
+const bookingUrl = "";
+
+const bookingIcon = (
+  <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden="true">
+    <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.8" />
+    <path d="M3 10h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <path d="M8 3v4M16 3v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    <circle cx="8" cy="14.5" r="1.3" fill="currentColor" />
+    <circle cx="12" cy="14.5" r="1.3" fill="currentColor" />
+    <circle cx="16" cy="14.5" r="1.3" fill="currentColor" />
+  </svg>
+);
+
 export default function Home() {
   const renderedAt = new Date().toLocaleString("en-US", {
     dateStyle: "medium",
@@ -399,30 +413,54 @@ export default function Home() {
                   automate.
                 </p>
 
-                <div className="mt-6 space-y-3">
+                <div className="mt-7 flex flex-wrap gap-4">
                   {contactMethods.map((method) => (
                     <a
                       key={method.label}
                       href={method.href}
                       target={method.external ? "_blank" : undefined}
                       rel={method.external ? "noreferrer" : undefined}
-                      className="group flex items-center gap-4 rounded-2xl border border-border bg-background/60 p-4 transition hover:-translate-y-0.5 hover:border-accent-text/50 hover:shadow-md"
+                      title={`${method.label} — ${method.value}`}
+                      aria-label={`${method.label} — ${method.value}`}
+                      className="group flex flex-col items-center gap-2"
                     >
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-accent-text">
+                      <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-border bg-background/60 text-foreground transition group-hover:-translate-y-1 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-ink group-hover:shadow-lg group-hover:shadow-accent/30">
                         {method.icon}
                       </span>
-                      <div className="min-w-0">
-                        <p className="text-sm font-bold text-foreground">{method.label}</p>
-                        <p className="truncate text-xs text-muted">{method.value}</p>
-                      </div>
-                      <span
-                        aria-hidden="true"
-                        className="ml-auto shrink-0 text-muted transition group-hover:translate-x-1 group-hover:text-accent-text"
-                      >
-                        →
+                      <span className="text-[11px] font-semibold text-muted transition group-hover:text-accent-text">
+                        {method.label}
                       </span>
                     </a>
                   ))}
+
+                  {bookingUrl ? (
+                    <a
+                      href={bookingUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      title="Book a call"
+                      aria-label="Book a call"
+                      className="group flex flex-col items-center gap-2"
+                    >
+                      <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-border bg-background/60 text-foreground transition group-hover:-translate-y-1 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-ink group-hover:shadow-lg group-hover:shadow-accent/30">
+                        {bookingIcon}
+                      </span>
+                      <span className="text-[11px] font-semibold text-muted transition group-hover:text-accent-text">
+                        Book a call
+                      </span>
+                    </a>
+                  ) : (
+                    <span
+                      title="Booking link coming soon"
+                      aria-label="Booking link coming soon"
+                      className="flex cursor-not-allowed flex-col items-center gap-2 opacity-50"
+                    >
+                      <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-dashed border-border text-muted">
+                        {bookingIcon}
+                      </span>
+                      <span className="text-[11px] font-semibold text-muted">Coming soon</span>
+                    </span>
+                  )}
                 </div>
               </div>
 
