@@ -146,17 +146,6 @@ const automationSamples: AutomationSample[] = [
   },
 ];
 
-const reels = [
-  { title: "Reel 1", src: "/reels/reel-1.mp4", poster: "/reels/reel-1.jpg" },
-  { title: "Reel 2", src: "/reels/reel-2.mp4", poster: "/reels/reel-2.jpg" },
-  { title: "Reel 3", src: "/reels/reel-3.mp4", poster: "/reels/reel-3.jpg" },
-  { title: "Reel 4", src: "/reels/reel-4.mp4", poster: "/reels/reel-4.jpg" },
-  { title: "Reel 5", src: "/reels/reel-5.mp4", poster: "/reels/reel-5.jpg" },
-  { title: "Reel 6", src: "/reels/reel-6.mp4", poster: "/reels/reel-6.jpg" },
-  { title: "Ad 1", src: "/reels/ad-1.mp4", poster: "/reels/ad-1.jpg", aspect: "landscape" as const },
-  { title: "Lifestyle Gym App Walkthrough", src: "/reels/lifestyle-gym-app.mp4", poster: "/reels/lifestyle-gym-app.jpg" },
-];
-
 export default function Home() {
   const renderedAt = new Date().toLocaleString("en-US", {
     dateStyle: "medium",
@@ -315,36 +304,6 @@ export default function Home() {
                   <p className="mt-1 text-sm text-muted">{item.company}</p>
                   <p className="mt-3 text-sm leading-7 text-muted">{item.description}</p>
                 </article>
-              ))}
-            </div>
-          </section>
-        </Reveal>
-
-        <Reveal>
-          <section id="reels" className="scroll-mt-24 rounded-[1.75rem] border border-border bg-card p-7 shadow-sm transition-colors lg:p-8">
-            <p className="text-sm font-bold uppercase tracking-[0.3em] text-accent-text">Content creation</p>
-            <h2 className="mt-2 text-2xl font-extrabold text-foreground">Reels and video content</h2>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-muted">
-              A selection of reels and promotional videos I created and edited for marketing campaigns.
-            </p>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {reels.map((reel) => (
-                <div
-                  key={reel.src}
-                  className="overflow-hidden rounded-[1.25rem] border border-white/10 bg-card-dark transition hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <video
-                    src={reel.src}
-                    poster={reel.poster}
-                    controls
-                    preload="none"
-                    playsInline
-                    className={`w-full bg-black object-contain ${reel.aspect === "landscape" ? "aspect-video" : "aspect-9/16"}`}
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                  <p className="px-4 py-3 text-sm font-medium text-white/90">{reel.title}</p>
-                </div>
               ))}
             </div>
           </section>
