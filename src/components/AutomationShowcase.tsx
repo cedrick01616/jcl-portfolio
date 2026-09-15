@@ -121,13 +121,25 @@ export default function AutomationShowcase({ samples }: { samples: AutomationSam
                 ✕
               </button>
             </div>
-            <div className="flex-1 space-y-4 overflow-y-auto bg-card-dark p-4">
-              {lightbox.images!.map((src) => (
-                <div key={src} className="relative w-full overflow-hidden rounded-xl border border-border">
-                  <Image src={src} alt={lightbox.title} width={1600} height={900} className="h-auto w-full" />
-                </div>
-              ))}
-            </div>
+            {lightbox.images!.length === 1 ? (
+              <div className="flex flex-1 items-center justify-center overflow-auto bg-card-dark p-4">
+                <Image
+                  src={lightbox.images![0]}
+                  alt={lightbox.title}
+                  width={2048}
+                  height={1200}
+                  className="h-auto max-h-full w-auto max-w-full rounded-xl border border-border object-contain"
+                />
+              </div>
+            ) : (
+              <div className="flex-1 space-y-4 overflow-y-auto bg-card-dark p-4">
+                {lightbox.images!.map((src) => (
+                  <div key={src} className="relative w-full overflow-hidden rounded-xl border border-border">
+                    <Image src={src} alt={lightbox.title} width={1600} height={900} className="h-auto w-full" />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}
