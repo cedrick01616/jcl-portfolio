@@ -8,8 +8,8 @@ export type AutomationSample = {
   title: string;
   description: string;
   tag: string;
-  /** Drop a screenshot/GIF in /public/automations and point this at it — the placeholder disappears automatically. */
-  image?: string;
+  /** Drop screenshots/GIFs in /public/automations and list them here — the placeholder disappears automatically. */
+  images?: string[];
 };
 
 function FlowIcon() {
@@ -32,6 +32,7 @@ function FlowIcon() {
 export default function AutomationShowcase({ samples }: { samples: AutomationSample[] }) {
   const categories = ["All", ...Array.from(new Set(samples.map((s) => s.category)))];
   const [active, setActive] = useState("All");
+  const [lightbox, setLightbox] = useState<AutomationSample | null>(null);
 
   const visible = active === "All" ? samples : samples.filter((s) => s.category === active);
 
@@ -55,31 +56,81 @@ export default function AutomationShowcase({ samples }: { samples: AutomationSam
       </div>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-        {visible.map((sample) => (
-          <article
-            key={sample.title}
-            className="group flex flex-col overflow-hidden rounded-[1.5rem] border border-border bg-background/50 transition hover:-translate-y-1 hover:shadow-lg"
-          >
-            {sample.image ? (
-              <div className="relative aspect-video w-full overflow-hidden bg-card-dark">
-                <Image src={sample.image} alt={sample.title} fill className="object-cover" />
+        {visible.map((sample) => {
+          const hasImages = !!sample.images?.length;
+          return (
+            <article
+              key={sample.title}
+              onClick={() => hasImages && setLightbox(sample)}
+              className={`group flex flex-col overflow-hidden rounded-[1.5rem] border border-border bg-background/50 transition hover:-translate-y-1 hover:shadow-lg ${
+                hasImages ? "cursor-pointer" : ""
+              }`}
+            >
+              {hasImages ? (
+                <div className="relative aspect-video w-full overflow-hidden bg-card-dark">
+                  <Image
+                    src={sample.images![0]}
+                    alt={sample.title}
+                    fill
+                    className="object-cover object-top"
+                  />
+                  {sample.images!.length > 1 && (
+                    <span className="absolute bottom-2 right-2 rounded-full bg-black/60 px-2.5 py-1 text-xs font-semibold text-white">
+                      +{sample.images!.length - 1} more
+                    </span>
+                  )}
+                </div>
+              ) : (
+                <div className="relative flex aspect-video w-full flex-col items-center justify-center gap-2 border-b border-dashed border-border bg-card-dark/40 text-center">
+                  <FlowIcon />
+                  <p className="text-xs font-semibold text-muted">Workflow preview coming soon</p>
+                </div>
+              )}
+              <div className="flex flex-1 flex-col p-5">
+                <span className="inline-flex w-fit items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-bold text-accent-text">
+                  {sample.tag}
+                </span>
+                <h3 className="mt-3 text-lg font-bold text-foreground">{sample.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">{sample.description}</p>
               </div>
-            ) : (
-              <div className="relative flex aspect-video w-full flex-col items-center justify-center gap-2 border-b border-dashed border-border bg-card-dark/40 text-center">
-                <FlowIcon />
-                <p className="text-xs font-semibold text-muted">Workflow preview coming soon</p>
-              </div>
-            )}
-            <div className="flex flex-1 flex-col p-5">
-              <span className="inline-flex w-fit items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-bold text-accent-text">
-                {sample.tag}
-              </span>
-              <h3 className="mt-3 text-lg font-bold text-foreground">{sample.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-muted">{sample.description}</p>
-            </div>
-          </article>
-        ))}
+            </article>
+          );
+        })}
       </div>
+
+      {lightbox && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${lightbox.title} screenshots`}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
+          onClick={() => setLightbox(null)}
+        >
+          <div
+            onClick={(event) => event.stopPropagation()}
+            className="relative flex h-[90vh] w-full max-w-3xl flex-col overflow-hidden rounded-[1.75rem] border border-border bg-background shadow-2xl"
+          >
+            <div className="flex items-center justify-between border-b border-border px-6 py-4">
+              <h2 className="text-lg font-bold text-foreground">{lightbox.title}</h2>
+              <button
+                type="button"
+                onClick={() => setLightbox(null)}
+                aria-label="Close"
+                className="flex h-9 w-9 items-center justify-center rounded-full text-muted transition hover:bg-card hover:text-foreground"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="flex-1 space-y-4 overflow-y-auto bg-card-dark p-4">
+              {lightbox.images!.map((src) => (
+                <div key={src} className="relative w-full overflow-hidden rounded-xl border border-border">
+                  <Image src={src} alt={lightbox.title} width={1600} height={900} className="h-auto w-full" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

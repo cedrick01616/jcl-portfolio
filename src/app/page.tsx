@@ -102,7 +102,7 @@ const automationSamples: AutomationSample[] = [
     title: "Automated Lead Routing",
     description:
       "Website form submissions flow straight into GHL, get scored, and route to the right pipeline stage with a follow-up sequence triggered automatically.",
-    // image: "/automations/lead-routing.png",
+    images: ["/automations/lead-routing-1.png", "/automations/lead-routing-2.jpg"],
   },
   {
     category: "Lead Routing & Pipelines",
@@ -293,7 +293,7 @@ export default function Home() {
             <div className="rounded-[1.5rem] border border-border bg-card p-7 shadow-sm transition-colors">
               <p className="text-sm font-bold uppercase tracking-[0.3em] text-accent-text">About</p>
               <h2 className="mt-3 text-2xl font-extrabold text-foreground">
-                A Computer Science grad who turns manual operations into automated systems.
+                I build automation systems that replace manual operations.
               </h2>
               <ul className="mt-6 space-y-2 text-sm text-muted">
                 {highlights.map((item) => (
