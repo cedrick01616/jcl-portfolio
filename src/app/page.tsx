@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import NavLinks from "@/components/NavLinks";
 import Reveal from "@/components/Reveal";
@@ -174,60 +173,54 @@ export default function Home() {
 
       <main id="top" className="mx-auto flex max-w-7xl flex-col gap-10 px-6 pb-16 lg:px-8">
         <Reveal>
-          <section className="relative grid items-center gap-8 overflow-hidden rounded-[2rem] border border-border bg-card/60 p-8 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.25)] backdrop-blur-xl transition-colors lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
+          <section className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-card-dark p-8 text-white shadow-[0_30px_80px_-30px_rgba(0,0,0,0.5)] sm:p-12 lg:p-16">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -top-32 -left-32 h-80 w-80 rounded-full bg-accent/20 blur-3xl"
+              className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:44px_44px]"
             />
-            <div className="relative max-w-2xl">
-              <div className="mb-4 inline-flex items-center rounded-full bg-accent px-4 py-1.5 text-sm font-bold text-accent-ink">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-accent/25 blur-[110px]"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent/10 blur-[110px]"
+            />
+
+            <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
+              <div className="mb-6 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-accent">
                 Open to freelance, contract, and full-time opportunities
               </div>
-              <h1 className="text-4xl font-black tracking-tight text-foreground sm:text-5xl">
-                I build AI-powered GoHighLevel automations that turn leads into revenue.
+              <h1 className="text-4xl font-black leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+                AI automation systems, built in GoHighLevel, that turn leads into revenue.
               </h1>
-              <p className="mt-5 text-lg leading-8 text-muted">{profile.summary}</p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <p className="mt-6 max-w-xl text-lg leading-8 text-white/70">{profile.summary}</p>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
                 <a
                   href="#automations"
-                  className="rounded-full bg-accent px-5 py-3 text-sm font-bold text-accent-ink shadow-lg shadow-accent/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40"
+                  className="rounded-full bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-lg shadow-accent/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40"
                 >
                   View automation work
                 </a>
                 <a
                   href="#contact"
-                  className="rounded-full border border-border px-5 py-3 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-accent-text/50"
+                  className="group inline-flex items-center gap-1.5 text-sm font-semibold text-white/80 transition hover:text-accent"
                 >
                   Let&apos;s connect
+                  <span aria-hidden="true" className="transition group-hover:translate-x-1">
+                    →
+                  </span>
                 </a>
               </div>
-              <ul className="mt-8 space-y-2 text-sm text-muted">
-                {highlights.map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </div>
 
-            <div className="relative rounded-[1.75rem] border border-white/10 bg-card-dark p-5 text-white shadow-2xl">
-              <Image
-                src="/ced-photo.jpg"
-                alt="John Cedric A. Lunnay"
-                width={720}
-                height={720}
-                priority
-                className="rounded-[1.25rem] object-cover"
-              />
-              <div className="mt-5 grid grid-cols-2 gap-3">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                    <p className="text-2xl font-black text-accent">{stat.value}</p>
-                    <p className="mt-1 text-xs font-semibold text-white/80">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
+            <div className="relative mt-12 grid grid-cols-2 gap-6 border-t border-white/10 pt-8 sm:grid-cols-4">
+              {stats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <p className="text-2xl font-black text-accent sm:text-3xl">{stat.value}</p>
+                  <p className="mt-1 text-xs font-semibold text-white/60">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </section>
         </Reveal>
@@ -239,6 +232,14 @@ export default function Home() {
               <h2 className="mt-3 text-2xl font-extrabold text-foreground">
                 A Computer Science grad who turns manual operations into automated systems.
               </h2>
+              <ul className="mt-6 space-y-2 text-sm text-muted">
+                {highlights.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="rounded-[1.5rem] border border-border bg-card p-7 shadow-sm transition-colors">
               <p className="text-lg leading-8 text-muted">
