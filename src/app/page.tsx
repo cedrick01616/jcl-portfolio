@@ -110,7 +110,7 @@ const automationSamples: AutomationSample[] = [
     title: "Opportunity Pipeline Build",
     description:
       "Custom pipeline stages mapped to the full sales journey — new lead to closed-won — with automated triggers on every stage change.",
-    // image: "/automations/pipeline-build.png",
+    images: ["/automations/pipeline-build-1.png"],
   },
   {
     category: "Win-Back & Retention",
