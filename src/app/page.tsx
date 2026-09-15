@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import ResumeModal from "@/components/ResumeModal";
 import ThemeToggle from "@/components/ThemeToggle";
 import AutomationShowcase, { type AutomationSample } from "@/components/AutomationShowcase";
+import AutomationBot from "@/components/AutomationBot";
 
 export const dynamic = "force-dynamic";
 
@@ -190,6 +191,9 @@ export default function Home() {
           />
 
           <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 text-center lg:max-w-4xl lg:px-8 xl:max-w-5xl">
+            <div className="mb-6">
+              <AutomationBot />
+            </div>
             <div className="mb-5 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-accent">
               Open to freelance, contract, and full-time opportunities
             </div>
