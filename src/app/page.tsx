@@ -118,7 +118,7 @@ const automationSamples: AutomationSample[] = [
     title: "Win-Back Email Sequence",
     description:
       "A multi-step email sequence that automatically re-engages former customers with personalized offers to recover lost revenue.",
-    // image: "/automations/win-back.png",
+    images: ["/automations/win-back-1.png", "/automations/win-back-2.png"],
   },
   {
     category: "Win-Back & Retention",
