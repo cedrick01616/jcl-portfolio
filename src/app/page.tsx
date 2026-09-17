@@ -236,7 +236,7 @@ export default function Home() {
       <Reveal className="flex flex-1 flex-col">
         <section
           id="top"
-          className="relative flex flex-1 flex-col justify-center overflow-hidden border-b border-white/10 bg-card-dark py-12 text-white sm:py-16 lg:py-20"
+          className="relative flex flex-1 flex-col justify-center overflow-hidden border-b border-white/10 bg-card-dark py-16 text-white sm:py-20 lg:py-24 2xl:py-28"
         >
           <div
             aria-hidden="true"
@@ -251,29 +251,29 @@ export default function Home() {
             className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent/10 blur-[110px]"
           />
 
-          <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 text-center lg:max-w-4xl lg:px-8 xl:max-w-5xl">
+          <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 text-center lg:max-w-4xl lg:px-8 xl:max-w-5xl 2xl:max-w-6xl 2xl:px-10">
             <div className="mb-6">
               <AutomationBot />
             </div>
-            <div className="mb-5 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-accent">
+            <div className="mb-5 inline-flex max-w-[92%] items-center justify-center text-balance rounded-2xl border border-white/15 bg-white/5 px-3 py-1.5 text-center text-[10px] font-bold uppercase tracking-[0.08em] text-accent sm:max-w-none sm:rounded-full sm:px-4 sm:text-xs sm:tracking-[0.2em] 2xl:px-5 2xl:py-2 2xl:text-sm">
               Open to freelance, contract, and full-time opportunities
             </div>
-            <h1 className="text-3xl font-black leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl">
+            <h1 className="text-[clamp(1.875rem,1rem+3.5vw,4.5rem)] font-black leading-[1.1] tracking-tight">
               AI automation systems, built in GoHighLevel, that turn leads into revenue.
             </h1>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-white/70 lg:text-lg lg:leading-8">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-white/70 lg:text-lg lg:leading-8 2xl:max-w-3xl 2xl:text-xl">
               {profile.summary}
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-5">
               <a
                 href="#automations"
-                className="rounded-full bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-lg shadow-accent/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40"
+                className="rounded-full bg-accent px-7 py-3.5 text-sm font-bold text-accent-ink shadow-lg shadow-accent/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/40 2xl:px-8 2xl:py-4 2xl:text-base"
               >
                 View automation work
               </a>
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-1.5 text-sm font-semibold text-white/80 transition hover:text-accent"
+                className="group inline-flex items-center gap-1.5 text-sm font-semibold text-white/80 transition hover:text-accent 2xl:text-base"
               >
                 Let&apos;s connect
                 <span aria-hidden="true" className="transition group-hover:translate-x-1">
@@ -283,11 +283,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto mt-9 grid max-w-4xl grid-cols-2 gap-y-6 border-t border-white/10 px-6 pt-6 sm:grid-cols-4 sm:gap-x-6 lg:px-8">
+          <div className="relative mx-auto mt-9 grid max-w-4xl grid-cols-2 gap-y-6 border-t border-white/10 px-6 pt-6 sm:grid-cols-4 sm:gap-x-6 lg:px-8 2xl:max-w-5xl 2xl:gap-x-10 2xl:pt-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-xl font-black text-accent sm:text-2xl">{stat.value}</p>
-                <p className="mt-1 text-xs font-semibold text-white/60">{stat.label}</p>
+                <p className="text-xl font-black text-accent sm:text-2xl 2xl:text-3xl">{stat.value}</p>
+                <p className="mt-1 text-xs font-semibold text-white/60 2xl:text-sm">{stat.label}</p>
               </div>
             ))}
           </div>

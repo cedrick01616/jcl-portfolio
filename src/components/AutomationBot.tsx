@@ -34,7 +34,7 @@ export default function AutomationBot() {
         <div
           role="status"
           aria-live="polite"
-          className="absolute -top-4 left-1/2 w-[min(88vw,20rem)] -translate-x-1/2 -translate-y-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm leading-6 text-white shadow-lg backdrop-blur-sm"
+          className="absolute -top-4 left-1/2 w-[min(88vw,20rem)] -translate-x-1/2 -translate-y-full rounded-2xl border border-white/15 bg-white/10 px-4 py-3 text-sm leading-6 text-white shadow-lg backdrop-blur-sm lg:w-[min(50vw,26rem)] lg:text-base 2xl:w-[min(34vw,30rem)] 2xl:text-lg"
         >
           {AUTOMATIONS[index]}
           <span
@@ -47,11 +47,11 @@ export default function AutomationBot() {
           type="button"
           onClick={next}
           aria-label="Show another automation I can build"
-          className={`relative flex h-24 w-24 items-center justify-center rounded-3xl border border-accent/30 bg-accent/10 text-accent transition-transform duration-200 [animation:float_3.5s_ease-in-out_infinite] hover:-translate-y-1 hover:border-accent/60 ${
+          className={`relative flex h-24 w-24 items-center justify-center rounded-3xl border border-accent/30 bg-accent/10 text-accent transition-transform duration-200 [animation:float_3.5s_ease-in-out_infinite] hover:-translate-y-1 hover:border-accent/60 lg:h-28 lg:w-28 2xl:h-32 2xl:w-32 ${
             bump ? "scale-90" : "scale-100"
           }`}
         >
-          <svg viewBox="0 0 48 48" fill="none" className="h-14 w-14" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" className="h-14 w-14 lg:h-16 lg:w-16 2xl:h-20 2xl:w-20" aria-hidden="true">
             <line x1="24" y1="4" x2="24" y2="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             <circle cx="24" cy="4" r="2.5" fill="currentColor" />
             <rect x="6" y="18" width="4" height="9" rx="2" fill="currentColor" opacity="0.5" />
@@ -63,7 +63,7 @@ export default function AutomationBot() {
           </svg>
         </button>
       </div>
-      <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
+      <p className="mt-3 text-xs font-semibold uppercase tracking-[0.15em] text-white/40 sm:tracking-[0.2em] 2xl:text-sm">
         Tap to see what I automate
       </p>
     </div>
