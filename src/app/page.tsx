@@ -236,23 +236,16 @@ export default function Home() {
       <Reveal className="flex flex-1 flex-col">
         <section
           id="top"
-          className="relative flex flex-1 flex-col justify-center overflow-hidden border-b border-white/10 bg-card-dark py-16 text-white sm:py-20 lg:py-24 2xl:py-28"
+          className="relative flex flex-1 flex-col justify-center border-b border-white/10 bg-card-dark py-16 text-white sm:py-20 lg:py-24 2xl:py-28"
         >
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-size-[44px_44px]"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-accent/25 blur-[110px]"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent/10 blur-[110px]"
-          />
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+            <div className="absolute inset-0 opacity-[0.12] bg-[linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] bg-size-[44px_44px]" />
+            <div className="absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-accent/25 blur-[110px]" />
+            <div className="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent/10 blur-[110px]" />
+          </div>
 
           <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 text-center lg:max-w-4xl lg:px-8 xl:max-w-5xl 2xl:max-w-6xl 2xl:px-10">
-            <div className="mb-6">
+            <div className="mb-6 mt-16 sm:mt-8 lg:mt-0">
               <AutomationBot />
             </div>
             <div className="mb-5 inline-flex max-w-[92%] items-center justify-center text-balance rounded-2xl border border-white/15 bg-white/5 px-3 py-1.5 text-center text-[10px] font-bold uppercase tracking-[0.08em] text-accent sm:max-w-none sm:rounded-full sm:px-4 sm:text-xs sm:tracking-[0.2em] 2xl:px-5 2xl:py-2 2xl:text-sm">
