@@ -142,7 +142,15 @@ const automationSamples: AutomationSample[] = [
     title: "Website → CRM Integration",
     description:
       "Rebuilt company website wired directly into GHL, so every form submission becomes a tracked, automatically routed lead.",
-    // image: "/automations/website-crm.png",
+    images: [
+      "/automations/website-part-1.png",
+      "/automations/website-part-2.png",
+      "/automations/website-part-3.png",
+      "/automations/website-part-4.png",
+      "/automations/website-part-5.png",
+      "/automations/website-part-6.png",
+      "/automations/website-part-7.png",
+    ],
   },
 ];
 
